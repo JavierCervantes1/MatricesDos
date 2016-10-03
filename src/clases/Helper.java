@@ -83,7 +83,7 @@ public class Helper {
             for (int j = 0; j < nc; j++) {
                 //i==((nf-2)/2) && j ==nc-1
                 aux = (int) tabla1.getValueAt(i, j);
-                if (j==0 || i==0 && j<nc-1 || i==(nf-1)/2 && j <nc-1 || i==nf-1 && j<nc-1 || j == nc-1 && i != 0 && i != (nf-1)/2 && i != nf-1) {
+                if (j == 0 || i == 0 && j < nc - 1 || i == (nf - 1) / 2 && j < nc - 1 || i == nf - 1 && j < nc - 1 || j == nc - 1 && i != 0 && i != (nf - 1) / 2 && i != nf - 1) {
                     tabla2.setValueAt(aux, i, j);
                 }
             }
@@ -104,7 +104,7 @@ public class Helper {
                 //  j  = i
 
                 aux = (int) tabla1.getValueAt(i, j);
-                if (j == 0 || j == (i+1) - (nf/2)|| j == nc - 1 - i) {
+                if (j == 0 || j == (i + 1) - (nf / 2) || j == nc - 1 - i) {
                     tabla2.setValueAt(aux, i, j);
                 }
             }
@@ -122,7 +122,7 @@ public class Helper {
                 //  j  = i
 
                 aux = (int) tabla1.getValueAt(i, j);
-                if (j==0 || j==nc-1 || j == i && j <= (nc-1)/2 ||j == nc - 1 - i && i<=(nc-1)/2 ) {
+                if (j == 0 || j == nc - 1 || j == i && j <= (nc - 1) / 2 || j == nc - 1 - i && i <= (nc - 1) / 2) {
                     tabla2.setValueAt(aux, i, j);
                 }
             }
@@ -138,9 +138,9 @@ public class Helper {
             for (int j = 0; j < nc; j++) {
                 aux = (int) tabla1.getValueAt(i, j);
 
-                if (j==0 || j==nc-1 || i==nf-1 && j!=(nc-1)/2 || j == (nc-1)/2 && i>= nf/2 && i!=nf-1) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
+                if (j == 0 || j == nc - 1 || i == nf - 1 && j != (nc - 1) / 2 || j == (nc - 1) / 2 && i >= nf / 2 && i != nf - 1) {
+                    tabla2.setValueAt(aux, i, j);
+                }
             }
         }
     }
@@ -150,162 +150,115 @@ public class Helper {
         nf = tabla1.getRowCount();
         nc = tabla1.getColumnCount();
         for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-                            if (j==0 && i!=0 && i<=(nf-3) || i==0 && j!=0 && j!=nc-1 || i==nf-2 && j!=0 && j!=nc-1 || j==nc-1 && i!=0 && i<=(nf-3) || j==nc-1 && i==nf-1) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
-                    }
+            for (int j = 0; j < nc; j++) {
+                aux = (int) tabla1.getValueAt(i, j);
+                if (j == 0 && i != 0 && i <= (nf - 3) || i == 0 && j != 0 && j != nc - 1 || i == nf - 2 && j != 0 && j != nc - 1 || j == nc - 1 && i != 0 && i <= (nf - 3) || j == nc - 1 && i == nf - 1) {
+                    tabla2.setValueAt(aux, i, j);
+                }
+            }
+        }
     }
 
-    public static void letraZ(JTable tabla1, JTable tabla2) {
+    public static void letraJ(JTable tabla1, JTable tabla2) {
         int nf, nc, aux;
         nf = tabla1.getRowCount();
         nc = tabla1.getColumnCount();
         for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-                            if (i == 0 || i == nf - 1 || j == (nc - 1) - (i - 1 / 2)) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
-                    }
+            for (int j = 0; j < nc; j++) {
+                aux = (int) tabla1.getValueAt(i, j);
+                if (i == 0 || j == (nc - 1) / 2 || i == nf - 1 && j <= (nc - 1) / 2 || j == 0 && i >= (nf - 1) / 2) {
+                    tabla2.setValueAt(aux, i, j);
+                }
+            }
+        }
     }
 
-    public static void letraT(JTable tabla1, JTable tabla2) {
+    public static void letraG(JTable tabla1, JTable tabla2) {
         int nf, nc, aux;
         nf = tabla1.getRowCount();
         nc = tabla1.getColumnCount();
         for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-                            if (i == 0 || j == (nc - 1) / 2) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
+            for (int j = 0; j < nc; j++) {
+                aux = (int) tabla1.getValueAt(i, j);
+                if (i == 0 || j == 0 || i - 1 == (nf - 1) / 2 || i == nf - 1 || j == nc - 1 && i > (nf - 1) / 2 || j == nc - 1 && i <= ((nf - 1) / 2) / 2) {
+                    tabla2.setValueAt(aux, i, j);
+                }
+            }
 
-                    }
+        }
     }
 
-    public static void letraV(JTable tabla1, JTable tabla2) {
+    public static void letraR(JTable tabla1, JTable tabla2) {
         int nf, nc, aux;
         nf = tabla1.getRowCount();
         nc = tabla1.getColumnCount();
         for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-                            if (j == nc + ((nc) / 2) - (i + 1) || i == ((nf - 1) / 2) + j) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
-                    }
+            for (int j = 0; j < nc; j++) {
+                aux = (int) tabla1.getValueAt(i, j);
+                if (i==0 || j==0 || i==(nf-1)/2 || j==nc-1 && i<=(nf-1)/2 || j==i && i>=(nf-1)/2 && j>=(nc-1)/2) {
+                    tabla2.setValueAt(aux, i, j);
+                }
+            }
+        }
     }
 
-    public static void letraE(JTable tabla1, JTable tabla2) {
+    public static void figuraUno(JTable tabla1, JTable tabla2) {
         int nf, nc, aux;
         nf = tabla1.getRowCount();
         nc = tabla1.getColumnCount();
         for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-                            if (j == 0 || i == 0 || i == (nf - 1) / 2 || i == nf - 1) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
+            for (int j = 0; j < nc; j++) {
+                aux = (int) tabla1.getValueAt(i, j);
+                if (i == 0 || j == i || j == nc - 1 - i || j==(nc-1)/2) {
+                    tabla2.setValueAt(aux, i, j);
+                }
+            }
 
-                    }
+        }
     }
 
-    public static void letraF(JTable tabla1, JTable tabla2) {
+    public static void figuraDos(JTable tabla1, JTable tabla2) {
         int nf, nc, aux;
         nf = tabla1.getRowCount();
         nc = tabla1.getColumnCount();
         for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-                            if (i == 0 || j == 0 || i == (nf - 1) / 2) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
+            for (int j = 0; j < nc; j++) {
+                aux = (int) tabla1.getValueAt(i, j);
+                if (j == 0 || j == i || j == nc - 1 - i || i==(nf-1)/2) {
+                    tabla2.setValueAt(aux, i, j);
+                }
+            }
 
-                    }
+        }
     }
 
-    public static void letraP(JTable tabla1, JTable tabla2) {
+    public static void figuraTres(JTable tabla1, JTable tabla2) {
         int nf, nc, aux;
         nf = tabla1.getRowCount();
         nc = tabla1.getColumnCount();
         for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-                            if (i == 0 || j == 0 || i == (nf - 1) / 2 || j == nc - 1 && j / i >= 2) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
+            for (int j = 0; j < nc; j++) {
+                aux = (int) tabla1.getValueAt(i, j);
+                if (j==(nc-1)/2 || j-1==(nc-1)/2 || i==(nf-1)/2 || i-1==(nf-1)/2) {
+                    tabla2.setValueAt(aux, i, j);
+                }
+            }
 
-                    }
+        }
     }
 
-    public static void letraI(JTable tabla1, JTable tabla2) {
+    public static void figuraCuatro(JTable tabla1, JTable tabla2) {
         int nf, nc, aux;
         nf = tabla1.getRowCount();
         nc = tabla1.getColumnCount();
         for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-                            if (j == (nc - 1) / 2) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
+            for (int j = 0; j < nc; j++) {
+                aux = (int) tabla1.getValueAt(i, j);
+                if (j==i) {
+                    tabla2.setValueAt(aux, i, j);
+                }
+            }
 
-                    }
+        }
     }
-
-    public static void letraN(JTable tabla1, JTable tabla2) {
-        int nf, nc, aux;
-        nf = tabla1.getRowCount();
-        nc = tabla1.getColumnCount();
-        for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-                            if (j == 0 || j == nc - 1 || i == j) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
-
-                    }
-    }
-
-    public static void letraY(JTable tabla1, JTable tabla2) {
-        int nf, nc, aux;
-        nf = tabla1.getRowCount();
-        nc = tabla1.getColumnCount();
-        for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-
-                            if (j == nc / 2 && j <= i || i + j == nf - 1 && i <= j || i == j && i + j <= nf) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
-
-                    }
-    }
-
-    public static void letraX(JTable tabla1, JTable tabla2) {
-        int nf, nc, aux;
-        nf = tabla1.getRowCount();
-        nc = tabla1.getColumnCount();
-        for (int i = 0; i < nf; i++) {
-                        for (int j = 0; j < nc; j++) {
-                            aux = (int) tabla1.getValueAt(i, j);
-                            if (j == i || j == nc - 1 - i) {
-                                tabla2.setValueAt(aux, i, j);
-                            }
-                        }
-
-                    }
-    }
-
 }
