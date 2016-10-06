@@ -324,7 +324,7 @@ public class Principal extends javax.swing.JFrame {
 
         switch (op) {
             case 0:
-                if (nf%2 != 0 && nf > 4 && nc > 2) {
+                if (nf % 2 != 0 && nf > 4 && nc > 2) {
 
                     Helper.LetraB(tblTablaInicial, tblTablaResultado);
                 } else {
@@ -346,10 +346,10 @@ public class Principal extends javax.swing.JFrame {
                 }
                 break;
             case 2:
-                if (nc%2 !=0 && nf >= nc && nf > 4 && nc > 4) {
+                if (nc % 2 != 0 && nf >= nc && nf > 4 && nc > 4) {
                     Helper.LetraM(tblTablaInicial, tblTablaResultado);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Incorrectas filas y columnas para formar la letra M" + "\n" 
+                    JOptionPane.showMessageDialog(this, "Incorrectas filas y columnas para formar la letra M" + "\n"
                             + "Asegurese de ingresar valores impares en columnas menores o iguales que el numero de filas", "Error", 2);
                     txtNumerodeColumnas.requestFocusInWindow();
                     txtNumerodeColumnas.selectAll();
@@ -358,10 +358,10 @@ public class Principal extends javax.swing.JFrame {
 
                 break;
             case 3:
-                if (nc%2 !=0 && nc > 4 || nf > 4) {
+                if (nc % 2 != 0 && nc > 4 || nf > 4) {
                     Helper.LetraW(tblTablaInicial, tblTablaResultado);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Incorrectas filas y columnas para formar la letra W"+ "\n" 
+                    JOptionPane.showMessageDialog(this, "Incorrectas filas y columnas para formar la letra W" + "\n"
                             + "Asegurese de ingresar valores impares en columnas", "Error", 2);
                     txtNumerodeColumnas.requestFocusInWindow();
                     txtNumerodeColumnas.selectAll();
@@ -383,10 +383,10 @@ public class Principal extends javax.swing.JFrame {
 
                 break;
             case 5:
-                if (nc%2 != 0 && nc > 4 && nf > 3) {
+                if (nc % 2 != 0 && nc > 4 && nf > 3) {
                     Helper.letraJ(tblTablaInicial, tblTablaResultado);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Incorrectas filas y columnas para formar la letra J" + "\n" 
+                    JOptionPane.showMessageDialog(this, "Incorrectas filas y columnas para formar la letra J" + "\n"
                             + "Asegurese de ingresar valores impares en columnas", "Error", 2);
                     txtNumerodeFilas.requestFocusInWindow();
                     txtNumerodeFilas.selectAll();
@@ -420,12 +420,12 @@ public class Principal extends javax.swing.JFrame {
 
                 break;
             case 8:
-                //Corregir
-                
-                if (nf > 5 && nc > 4) {
+
+                if (nc % 2 != 0 && nf == nc + 1 && nc > 4) {
                     Helper.figuraUno(tblTablaInicial, tblTablaResultado);
                 } else {
-                    JOptionPane.showMessageDialog(this, "", "Error", 2);
+                    JOptionPane.showMessageDialog(this, "Columnas: Asegurese de ingresar valores impares mayores que 4"
+                            + "\n" + "Filas: Debe sumarle 1 al numero de columnas ingresado para formar la figura", "Error", 2);
                     txtNumerodeFilas.requestFocusInWindow();
                     txtNumerodeFilas.selectAll();
                     sw = 0;
@@ -433,12 +433,12 @@ public class Principal extends javax.swing.JFrame {
 
                 break;
             case 9:
-                //Corregir
 
-                if (nf > 5 && nc > 4) {
+                if (nf % 2 != 0 && nf > 4 && nc == nf + 1) {
                     Helper.figuraDos(tblTablaInicial, tblTablaResultado);
                 } else {
-                    JOptionPane.showMessageDialog(this, "", "Error", 2);
+                    JOptionPane.showMessageDialog(this, "Filas: Asegurese de ingresar valores impares mayores que 4"
+                            + "\n" + "Columnas: Debe sumarle 1 al numero de filas ingresado para formar la figura", "Error", 2);
                     txtNumerodeFilas.requestFocusInWindow();
                     txtNumerodeFilas.selectAll();
                     sw = 0;
@@ -450,7 +450,7 @@ public class Principal extends javax.swing.JFrame {
                 if (nf % 2 == 0 && nc % 2 == 0 && nf > 5 && nc > 5) {
                     Helper.figuraTres(tblTablaInicial, tblTablaResultado);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Incorrectas filas y columnas para formar la figura tres" 
+                    JOptionPane.showMessageDialog(this, "Incorrectas filas y columnas para formar la figura tres"
                             + "\n" + "Asegurese de ingresar valores pares", "Error", 2);
                     txtNumerodeFilas.requestFocusInWindow();
                     txtNumerodeFilas.selectAll();
@@ -459,15 +459,15 @@ public class Principal extends javax.swing.JFrame {
                 break;
             case 11:
 
-                if (nf > 5 && nc > 5) {
+                if (nf == nc && nf % 2 != 0 && nf > 4 && nc > 4) {
                     Helper.figuraCuatro(tblTablaInicial, tblTablaResultado);
                 } else {
-                    JOptionPane.showMessageDialog(this, "Insuficientes filas y columnas para formar la letra I", "Error", 2);
+                    JOptionPane.showMessageDialog(this, "Debe ingresar una matriz cuadrada de dimensiones impares para formar el rombo", "Error", 2);
                     txtNumerodeColumnas.requestFocusInWindow();
                     txtNumerodeColumnas.selectAll();
                     sw = 0;
                 }
-            break;
+                break;
         }
         if (sw == 0) {
             JButton botonesH[] = {cmdCrear, cmdLimpiar};
